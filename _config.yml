@@ -20,14 +20,12 @@
 
 title: Kevin Fox
 email: kevin_fox@me.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Kevin Fox's personal blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kevinfox.dev" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  kfoxder
 
 # Build settings
-theme: minima
+theme: no-style-please
 plugins:
   - jekyll-feed
 
