@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Kevin Fox
+title: "Kevin Fox"
 email: kevin_fox@me.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kevinfox.dev" # the base hostname & protocol for your site, e.g. http://example.com
@@ -29,6 +29,7 @@ theme: minima
 remote_theme: riggraz/no-style-please
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.

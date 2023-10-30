@@ -1,0 +1,23 @@
+# For documentation on this file, see:
+# https://github.com/riggraz/no-style-please#customize-the-menu
+
+entries:
+  - title: me
+    entries:
+      - title: about
+        url: about
+      - title: github
+        url: https://github.com/KFoxder
+      - title: linkedin
+        url: https://www.linkedin.com/in/rkevinfox/
+      - title: kevin_fox at me dot com
+
+  - title: posts
+    post_list:
+      limit: 5
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: archive.html
+
+  - title: rss
+    url: feed.xml
