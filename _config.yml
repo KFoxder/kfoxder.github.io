@@ -25,7 +25,7 @@ url: "https://kevinfox.dev" # the base hostname & protocol for your site, e.g. h
 github_username:  kfoxder
 permalink: /:slug.html
 
-favicon: "logo.png" # name+extension of favicon (which must be put on the root folder)
+favicon: "icon.png" # name+extension of favicon (which must be put on the root folder)
 
 # Build settings
 theme: minima
