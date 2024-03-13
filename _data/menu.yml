@@ -12,12 +12,12 @@ entries:
         url: https://www.linkedin.com/in/rkevinfox/
       - title: kevin_fox at me dot com
 
-  - title: posts
+  - title: thoughts & things
     post_list:
-      limit: 5
-      show_more: true
-      show_more_text: See archive...
-      show_more_url: archive.html
+      category: posts
 
-  - title: rss
-    url: feed.xml
+  - title: travels
+    post_list:
+      category: travel
+
+   
