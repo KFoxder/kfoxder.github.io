@@ -10,14 +10,12 @@ entries:
         url: https://github.com/KFoxder
       - title: linkedin
         url: https://www.linkedin.com/in/rkevinfox/
+      - title: travels
+        url: travels
       - title: kevin_fox at me dot com
 
   - title: thoughts & things
     post_list:
       category: posts
-
-  - title: travels
-    post_list:
-      category: travel
 
    
