@@ -1,17 +1,18 @@
-{%-include back_link.html-%}
+
 
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Worldwide Cities Map</title>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
-    <style>
-        #map { position: absolute; top: 10%; bottom: 10px; width: 100%; }
-    </style>
-</head>
+{% include head.html %}
 <body>
+
+
+{%-include back_link.html-%}
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+<style>
+    #map { position: absolute; top: 10%; bottom: 10px; width: 100%; }
+</style>
+
 <div id="map"></div>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1Ijoia2ZveDIwMTAiLCJhIjoiY2o4b3Zxa2dwMDhuMjJxcnpsbWh3aDFoZSJ9.F_bujUHk3bxIDCJfBOGmTg';
