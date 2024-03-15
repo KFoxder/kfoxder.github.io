@@ -1,0 +1,105 @@
+{%-include back_link.html-%}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Worldwide Cities Map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <style>
+        #map { position: absolute; top: 10%; bottom: 10px; width: 100%; }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoia2ZveDIwMTAiLCJhIjoiY2o4b3Zxa2dwMDhuMjJxcnpsbWh3aDFoZSJ9.F_bujUHk3bxIDCJfBOGmTg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v11',
+        center: [10, 50], // Adjusted to show more of the world initially
+        zoom: 1
+    });
+
+    var locations = [
+        {lng: 2.3522, lat: 48.8566, name: "Paris, France"},
+        {lng: 4.8357, lat: 45.7640, name: "Lyon, France"},
+        {lng: 5.0415, lat: 47.3220, name: "Dijon, France"},
+        {lng: 7.2620, lat: 43.7102, name: "Nice, France"},
+        {lng: 6.6407, lat: 43.2677, name: "Saint Tropez, France"},
+        {lng: 7.1208, lat: 43.5808, name: "Antibes, France"},
+        {lng: 8.6821, lat: 50.1109, name: "Frankfurt, Germany"},
+        {lng: 6.9603, lat: 50.9375, name: "Cologne, Germany"},
+        {lng: 23.7275, lat: 37.9838, name: "Athens, Greece"},
+        {lng: 25.3289, lat: 37.4467, name: "Mikonos, Greece"},
+        {lng: 24.4436, lat: 36.6960, name: "Milos, Greece"},
+        {lng: 9.1900, lat: 45.4642, name: "Milan, Italy"},
+        {lng: 12.3155, lat: 45.4408, name: "Venice, Italy"},
+        {lng: 11.2558, lat: 43.7696, name: "Florence, Italy"},
+        {lng: 14.4846, lat: 40.6280, name: "Positano, Italy"},
+        {lng: 14.2221, lat: 40.5532, name: "Capri, Italy"},
+        {lng: -8.6291, lat: 41.1579, name: "Porto, Portugal"},
+        {lng: -7.5470, lat: 41.1621, name: "Douro Valley, Portugal"},
+        {lng: 14.4378, lat: 50.0755, name: "Prague, Czech Republic"},
+        {lng: -3.7038, lat: 40.4168, name: "Madrid, Spain"},
+        {lng: 2.1734, lat: 41.3851, name: "Barcelona, Spain"},
+        {lng: -0.1278, lat: 51.5074, name: "London, UK"},
+        {lng: -6.2603, lat: 53.3498, name: "Dublin, Ireland"},
+        {lng: 19.0402, lat: 47.4979, name: "Budapest, Hungary"},
+        {lng: 16.3738, lat: 48.2082, name: "Vienna, Austria"},
+        {lng: 4.9041, lat: 52.3676, name: "Amsterdam, Netherlands"},
+        {lng: 7.4246, lat: 43.7384, name: "Monaco"},
+        {lng: 115.0920, lat: -8.3405, name: "Bali, Indonesia"},
+        {lng: 104.0304, lat: 1.0456, name: "Batam, Indonesia"},
+        {lng: 139.6917, lat: 35.6895, name: "Tokyo, Japan"},
+        {lng: 135.7681, lat: 35.0116, name: "Kyoto, Japan"},
+        {lng: 141.3544, lat: 43.0621, name: "Sapporo, Japan"},
+        {lng: 135.5023, lat: 34.6937, name: "Osaka, Japan"},
+        {lng: 121.5654, lat: 25.0330, name: "Taipei, Taiwan"},
+        {lng: 103.8198, lat: 1.3521, name: "Singapore"},
+        {lng: 55.2708, lat: 25.2048, name: "Dubai, UAE"},
+        {lng: 114.1694, lat: 22.3193, name: "Hong Kong, China"},
+        {lng: 113.2644, lat: 23.1291, name: "Guangzhou, China"},
+        {lng: 121.4737, lat: 31.2304, name: "Shanghai, China"},
+        {lng: 28.9784, lat: 41.0082, name: "Istanbul, Turkey"},
+        {lng: 34.8296, lat: 38.6436, name: "Cappadocia, Turkey"},
+        {lng: -118.2437, lat: 34.0522, name: "Los Angeles, CA, USA"},
+        {lng: -116.5453, lat: 33.8303, name: "Palm Springs, CA, USA"},
+        {lng: -80.3582, lat: 27.2730, name: "Port St. Lucie, FL, USA"},
+        {lng: -87.6298, lat: 41.8781, name: "Chicago, IL, USA"},
+        {lng: -77.0369, lat: 38.9072, name: "Washington, DC, USA"},
+        {lng: -71.0589, lat: 42.3601, name: "Boston, MA, USA"},
+        {lng: -115.1398, lat: 36.1699, name: "Las Vegas, NV, USA"},
+        {lng: -106.8175, lat: 39.1911, name: "Aspen, Colorado, USA"},
+        {lng: -96.7970, lat: 32.7767, name: "Dallas, TX, USA"},
+        {lng: -122.4194, lat: 37.7749, name: "San Francisco, CA, USA"},
+        {lng: -111.8910, lat: 40.7608, name: "Salt Lake City, Utah, USA"},
+        {lng: -105.5903, lat: 41.3114, name: "Laramie, Wyoming, USA"},
+        {lng: -80.1918, lat: 25.7617, name: "Miami, Florida, USA"},
+        {lng: -72.7798, lat: 43.6775, name: "Killington, Vermont, USA"},
+        {lng: -73.5673, lat: 45.5017, name: "Montreal, Canada"},
+        {lng: -74.5962, lat: 46.1185, name: "Mont Tremblant, Canada"},
+        {lng: -79.3832, lat: 43.6532, name: "Toronto, Canada"},
+        {lng: -99.1332, lat: 19.4326, name: "Mexico City, Mexico"},
+        {lng: 153.6020, lat: -28.6474, name: "Byron Bay, Australia"},
+        {lng: -82.3666, lat: 23.1136, name: "Havana, Cuba"},
+        {lng: -66.1057, lat: 18.4655, name: "San Juan, Puerto Rico"},
+        {lng: -65.3010, lat: 18.3030, name: "Culebra, Puerto Rico"},
+    ];
+
+    locations.forEach(function(location) {
+        new mapboxgl.Marker({color: 'lightblue'})
+            .setLngLat([location.lng, location.lat])
+            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                .setHTML('<h3>' + location.name + '</h3>'))
+            .addTo(map);
+    });
+</script>
+
+{{ content }}
+
+</body>
+</html>
+
+
