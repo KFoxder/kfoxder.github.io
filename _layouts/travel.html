@@ -2,7 +2,7 @@
 
 <html>
 {% include head.html %}
-<body>
+<body style="background-color: #2a2a2a;">
 
 
 {%-include back_link.html-%}
@@ -18,7 +18,7 @@
     mapboxgl.accessToken = 'pk.eyJ1Ijoia2ZveDIwMTAiLCJhIjoiY2o4b3Zxa2dwMDhuMjJxcnpsbWh3aDFoZSJ9.F_bujUHk3bxIDCJfBOGmTg';
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/light-v11',
+        style: 'mapbox://styles/mapbox/dark-v11',
         center: [10, 50], // Adjusted to show more of the world initially
         zoom: 1
     });
@@ -91,7 +91,7 @@
     ];
 
     locations.forEach(function(location) {
-        new mapboxgl.Marker({color: 'lightblue'})
+        new mapboxgl.Marker({color: '#8F8A89'})
             .setLngLat([location.lng, location.lat])
             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
                 .setHTML('<h3>' + location.name + '</h3>'))
