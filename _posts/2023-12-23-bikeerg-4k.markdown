@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "BikeErg: 4K PR"
+date:   2023-12-23
+categories: 
+  - posts
+  - personal
+  - fitness
+---
+
+Over the last 3 months I have been working with my good friend [Jesse Biddle](https://www.instagram.com/boymeetserg/) on a BikeErg 4000m training plan. After missing the first round of the [2023 ErgWars competition](https://comp.erg.zone/leaderboard/lkFaVlspSE2cjo_K1Fo_Ag?genders=M&utm_source=ergzone) and coming in 27th in the male division I wanted to test out the 4k time trial.
+
+Result: I beat my previous 4K time by about 8 seconds. 
+
+![4K PR Image](/assets/bikerg_4k_pr.jpeg)
+
+We will probably test this again in Dec 2024 and see if I can improve it.
+
+If you are on strava come say hi: [@KFoxder](https://www.strava.com/athletes/kfoxder)
+

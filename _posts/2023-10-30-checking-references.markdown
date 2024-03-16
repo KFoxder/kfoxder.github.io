@@ -4,6 +4,7 @@ title:  "Checking References"
 date:   2023-10-30
 categories: 
   - posts
+  - professional
 ---
 
 Over the years, I have done many reference checks as part of the YCharts engineering interview process, and I have been called by others who are doing a reference check on someone I worked with or managed. 
