@@ -17,7 +17,9 @@
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}" />
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ECHQ861V1C"></script>
+{% if jekyll.environment == "production" %}
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ECHQ861V1C"></script>
+{% endif %}
 <script>
     window.dataLayer = window.dataLayer || [];
 
