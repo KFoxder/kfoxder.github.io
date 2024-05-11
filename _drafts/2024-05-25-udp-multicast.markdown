@@ -13,4 +13,3 @@ OCaml and UDP multicast have been two recent focuses of mine as I prepare for my
 I decided I would implement it in 3 different ways. First, I did it without any concurrency. Then I used `lwt`, which is the most popular concurrent library in OCaml as well as `async` which is less popular but used by Jane Street.
 
 
-

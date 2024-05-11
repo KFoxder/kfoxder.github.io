@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "UDP Multicast in OCaml"
-date:   2024-05-25
+title:  "2024 Review"
+date:   2024-12-31
 categories: 
   - posts
   - professional
@@ -10,6 +10,8 @@ categories:
 2024
 
 - Quit YCharts joined Jane Street
+- Picking up OCaml and functional programming
 - Moved from Philadelphia back to NYC
 - Traveled a lot (Singapore, HK, China) then (Japan, Seoul and Paris)
 - Met some new people (Brain Lee)
+
