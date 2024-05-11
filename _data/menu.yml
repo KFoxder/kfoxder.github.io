@@ -12,10 +12,10 @@ entries:
         url: https://www.linkedin.com/in/rkevinfox/
       - title: travels
         url: travels
+      - title: strava
+        url: https://www.strava.com/athletes/93998756
       - title: kevin_fox at me dot com
 
   - title: thoughts & things
     post_list:
       category: posts
-
-   

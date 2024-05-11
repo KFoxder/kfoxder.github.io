@@ -10,11 +10,14 @@ I am a seasoned hands-on engineering leader with track record of building and sc
 
 ### Experience
 
-YCharts - CTO - Jan 2021 - Present
+Jane Street - Developer - Jun 2024 - Present
+- OCamling 🐫🐪
+
+YCharts - CTO - Jan 2021 - Apr 2024
 
 - Appointed CTO in January 2021 post acquisition of YCharts by LLR Partners.
 - Responsible for all engineering, infrastructure, and security functions.
-- Grew engineering team strategically to 35+ with limited turnover and focus on DEI across North America and LATAM.
+- Grew engineering team strategically to 40+ with limited turnover and focus on DEI across North America and LATAM.
 - Worked closely with our CPO to develop and implement our engineering/product strategy that has led to 30+% in revenue growth YoY.
 - Led technical architecture for most critical engineering projects including our data source migration and zero downtime deployments.
 - Continually contribute multiple times a week to our codebase for tactical engineering improvements.
