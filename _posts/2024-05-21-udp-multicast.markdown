@@ -14,7 +14,7 @@ So I went about creating my own examples for the next person who is interested i
 
 I decided I would implement it in 3 different ways. First, I did it without any concurrency. Then I used `lwt`, which is the most popular concurrent library in OCaml as well as `async` which is less popular but used by Jane Street so for me made sense to include and understand. 
 
-While I assume I will be working with `async` at JS (who knows, I haven't started yet!) the lack of examples and in depth documentation besides RWO did make it harder to implement than `lwt`. This echos some of what I have read in the community discussions, I am sure there are more examples internally which will make it easier. 
+While I assume I will be working with `async` at JS (who knows, I haven't started yet!) the lack of examples and in depth documentation besides RWO did make it harder to implement than `lwt`. This echos some of what I have read in the [community discussions](https://discuss.ocaml.org/t/its-hard-to-find-docs-and-examples-of-async-lib/2190), I am sure there are more examples internally which will make it easier. 
 
 The most helpful resources I found while doing this were the following:
 - [Linux Documentation - Multicast](https://tldp.org/HOWTO/Multicast-HOWTO.html)
