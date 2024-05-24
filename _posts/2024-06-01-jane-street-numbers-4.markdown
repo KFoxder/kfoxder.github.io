@@ -36,7 +36,7 @@ I did consider looking at rows relative to their ancestor above and backtracking
 
 #### Part 2: Find a matrix that is valid
 
-Once we have all possible solutions to each row we "stitch" them together row by row to get a valid matrix that satisifies all the constraints. We start with one valid row and loop through the next row until we find a valid one and proceed down the tree of possibilities backtracking as we go. This is exteremely fast because we know the rows in isolation are valid but just check if the shaded cells are valid relative to each other and that groupings are valid relative to each row.
+Once we have all possible solutions to each row we "stitch" them together row by row to get a valid matrix that satisfies all the constraints. We start with one valid row and loop through the next row until we find a valid one and proceed down the tree of possibilities backtracking as we go. This is fast because we know the rows in isolation are valid but just check if the shaded cells are valid relative to each other and that groupings are valid relative to each row.
 
 
 
