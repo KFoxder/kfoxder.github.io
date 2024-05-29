@@ -22,7 +22,7 @@ The bulk of time is spent finding all possible solutions for each row taking int
 
 ✅ Shading is valid <br>
 ✅ Clue is valid (12,167 is a cube)<br>
-❌ Grouping is not valid <br>
+❌ Grouping is not valid (must be same number)<br>
 ![](/assets/js_numbers_4_example_1.png)
 
 ✅ Shading is valid <br>
