@@ -6,7 +6,7 @@ categories:
   - posts
   - professional
 ---
-The dopamine rush I get from solving a puzzle is real. 
+The dopamine rush I get from solving a puzzle is real.
 
 You can see my code here: [Github Link](https://github.com/KFoxder/jane_street_puzzle)
 
@@ -38,6 +38,21 @@ I did consider looking at rows relative to their ancestor above and backtracking
 
 Once we have all possible solutions to each row we "stitch" them together row by row to get a valid matrix that satisfies all the constraints. We start with one valid row and loop through the next row until we find a valid one and proceed down the tree of possibilities backtracking as we go. This is fast because we know the rows in isolation are valid but just check if the shaded cells are valid relative to each other and that groupings are valid relative to each row.
 
+```
+            X 3 4 3 X
+                |
+              /  \
+      X 3 4 3 X   X 3 4 3 X
+      2 1 X 5 5   1 3 X 5 5
+      (Invalid)    (Valid)
+```
+
+
+##### Notes & Improvements
+
+1. Codifying the groups for the 11 x 11 matrix was exhausting. I tried to get ChatGPT to help me with it but sadly it failed over and over to be able ot turn the matrix into grouped coordinates... ugh. 
+1. My first attempt was to try and create all permutations of shaded regions and then fill in each row but that proved to be impossible so my final solution here was a realization that the hints could greatly narrow down the search space for each row based on groupings.
+1. My gut tells me there are faster ways to do this by not pre-computing each row which I thought about implementing but I didn't want to put too much more time into this puzzle so I left it as is. 
 
 
 
