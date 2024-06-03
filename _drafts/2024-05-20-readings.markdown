@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "What I have been reading"
+date:   2024-05-20
+categories: 
+  - posts
+  - professional
+---
+
+Few things I have been reading that I think have been great:
+
+Fuchia Dunlop's Invitation to Banquet
+Glenn Fielder's https://mas-bandwidth.com/ blog
+Rudi Grinberg's http://rgrinberg.com/ blog
+- http://rgrinberg.com/posts/abandoning-async/
+
+
+
