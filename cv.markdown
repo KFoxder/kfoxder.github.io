@@ -17,10 +17,10 @@ YCharts - CTO - Jan 2021 - Apr 2024
 
 - Appointed CTO in January 2021 post acquisition of YCharts by LLR Partners.
 - Responsible for all engineering, infrastructure, and security functions.
-- Grew engineering team strategically to 40+ with limited turnover and focus on DEI across North America and LATAM.
-- Worked closely with our CPO to develop and implement our engineering/product strategy that has led to 30+% in revenue growth YoY.
+- Grew engineering team to 40+ with limited turnover and focus on DEI across North America and LATAM.
+- Worked closely with our CPO to develop and implement our engineering/product strategy that led to significant growth in revenue YoY.
 - Led technical architecture for most critical engineering projects including our data source migration and zero downtime deployments.
-- Continually contribute multiple times a week to our codebase for tactical engineering improvements.
+- Entered the trenches to contribute to our codebase for tactical engineering improvements.
 
 YCharts - VP of Engineering - Feb 2017 - Jan 2021
 
