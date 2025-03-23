@@ -10,7 +10,7 @@ categories:
 2024
 
 - Quit YCharts joined Jane Street
-- Picking up OCaml and functional programming
+- Picking up OCaml and functional programming in a production environment 
 - Moved from Philadelphia back to NYC
 - Traveled a lot (Singapore, HK, China) then (Japan, Seoul and Paris)
 - Met some new people (Brain Lee)
