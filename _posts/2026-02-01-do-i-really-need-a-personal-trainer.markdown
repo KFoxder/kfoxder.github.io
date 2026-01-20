@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Do I really need a personal trainer?"
-date: 2026-01-20
+date: 2026-02-01
 categories:
  - posts
  - professional
