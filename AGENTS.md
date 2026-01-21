@@ -7,6 +7,7 @@
 - Layouts and shared snippets are in `_layouts/` and `_includes/`; data files are in `_data/`.
 - Static assets (mostly images) are in `assets/`.
 - `_site/` is generated output from Jekyll; do not edit it directly.
+- Use 'bd' for task tracking
 
 ## Build, Test, and Development Commands
 - `bundle install` - install Ruby gem dependencies (Ruby 3.1.3 per `readme.md`).
