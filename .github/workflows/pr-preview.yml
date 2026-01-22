@@ -5,6 +5,16 @@ on:
     types: [opened, synchronize, reopened]
   pull_request_target:
     types: [closed]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to deploy preview for'
+        required: true
+        type: string
+      pr_ref:
+        description: 'PR branch ref to checkout'
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -13,7 +23,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pr-preview-${{ github.event.pull_request.number }}
+  group: pr-preview-${{ github.event.pull_request.number || inputs.pr_number }}
   cancel-in-progress: true
 
 jobs:
@@ -23,6 +33,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || inputs.pr_ref }}
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -32,7 +44,7 @@ jobs:
 
       - name: Build Jekyll site
         run: |
-          bundle exec jekyll build --baseurl "/pr-preview/pr-${{ github.event.pull_request.number }}"
+          bundle exec jekyll build --baseurl "/pr-preview/pr-${{ github.event.pull_request.number || inputs.pr_number }}"
         env:
           JEKYLL_ENV: production
           PAGES_REPO_NWO: ${{ github.repository }}
@@ -43,14 +55,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
           publish_branch: gh-pages
-          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
+          destination_dir: pr-preview/pr-${{ github.event.pull_request.number || inputs.pr_number }}
           keep_files: true
 
       - name: Comment PR with preview URL
         uses: actions/github-script@v7
         with:
           script: |
-            const prNumber = context.payload.pull_request.number;
+            const prNumber = context.payload.pull_request?.number || '${{ inputs.pr_number }}';
             const previewUrl = `https://kfoxder.github.io/pr-preview/pr-${prNumber}/`;
             const body = `## Preview Deployment
 
@@ -64,7 +76,7 @@ jobs:
             const comments = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: prNumber
+              issue_number: parseInt(prNumber)
             });
 
             const botComment = comments.data.find(comment =>
@@ -83,7 +95,7 @@ jobs:
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                issue_number: prNumber,
+                issue_number: parseInt(prNumber),
                 body: body
               });
             }
