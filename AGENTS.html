@@ -18,8 +18,26 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","headline":"Repository Guidelines","url":"https://kevinfox.dev/AGENTS"}</script>
 <!-- End Jekyll SEO tag -->
-<link type="application/atom+xml" rel="alternate" href="https://kevinfox.dev/feed.xml" title="Kevin Fox" /><link rel="shortcut icon" type="image/x-icon" href="/icon.png" />
+<link type="application/atom+xml" rel="alternate" href="https://kevinfox.dev/feed.xml" title="Kevin Fox" /><!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="//unpkg.com" />
+  <link rel="dns-prefetch" href="//basemaps.cartocdn.com" />
+
+  <!-- Preload main stylesheet -->
+  <link rel="preload" href="/assets/css/main.css" as="style" />
+
+  <!-- Critical CSS - Inlined for fast first paint -->
+  <style>
+    :root{--color-bg:#fff;--color-text:#212529;--color-accent:#0066cc;--max-width-content:650px}
+    @media(prefers-color-scheme:dark){:root{--color-bg:#1a1a1a;--color-text:#e8e8e8;--color-accent:#6db3f2}}
+    body{background-color:var(--color-bg);color:var(--color-text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6;max-width:var(--max-width-content);margin:0 auto;padding:1.5rem}
+    a{color:var(--color-accent);text-decoration:none}
+    h1,h2,h3{line-height:1.3}
+  </style>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/icon.png" />
   <link rel="stylesheet" href="/assets/css/main.css" />
+
 <!-- Google tag (gtag.js) -->
 
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ECHQ861V1C"></script>
@@ -36,8 +54,6 @@
     gtag('config', 'G-ECHQ861V1C');
 </script>
 </head>
-
-
 <body a="light">
     <main class="page-content" aria-label="Content">
       <div class="w">
