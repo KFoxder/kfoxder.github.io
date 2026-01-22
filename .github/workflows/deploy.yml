@@ -39,3 +39,4 @@ jobs:
           publish_branch: gh-pages
           keep_files: true
           exclude_assets: 'pr-preview/**'
+          cname: www.kevinfox.dev
