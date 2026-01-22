@@ -38,23 +38,21 @@
   <link rel="shortcut icon" type="image/x-icon" href="/pr-preview/pr-5/icon.png" />
   <link rel="stylesheet" href="/pr-preview/pr-5/assets/css/main.css" />
 
-  <!-- Google Analytics - Deferred for performance -->
-  
-  <script>
-    // Defer GA loading until after page load
-    window.addEventListener('load', function() {
-      var ga = document.createElement('script');
-      ga.async = true;
-      ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-ECHQ861V1C';
-      document.head.appendChild(ga);
-    });
+<!-- Google tag (gtag.js) -->
 
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ECHQ861V1C"></script>
+
+<script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
+
     gtag('config', 'G-ECHQ861V1C');
-  </script>
-  
+</script>
 </head>
 <body a="light">
     <main class="page-content" aria-label="Content">
