@@ -7,7 +7,6 @@ set -e
 ASSETS_DIR="$(dirname "$0")/../assets"
 MAX_WIDTH=1600
 JPEG_QUALITY=70
-PNG_QUALITY=85
 
 echo "Optimizing images in $ASSETS_DIR..."
 
