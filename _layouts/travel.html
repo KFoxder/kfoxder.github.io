@@ -33,52 +33,66 @@
 </div>
 
 <script>
-    // Lazy-load Mapbox only when the page is visible
+    // Lazy-load MapLibre only when the page is visible
     function initMap() {
         // Location data from Jekyll
         var locations = {{ site.data.locations | jsonify }};
+        var loading = document.getElementById('map-loading');
 
-        mapboxgl.accessToken = 'pk.eyJ1Ijoia2ZveDIwMTAiLCJhIjoiY2o4b3Zxa2dwMDhuMjJxcnpzbWh3aDFoZSJ9.F_bujUHk3bxIDCJfBOGmTg';
-        var map = new mapboxgl.Map({
+        var map = new maplibregl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/dark-v11',
+            style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
             center: [10, 50],
             zoom: 1
         });
 
         map.on('load', function() {
-            document.getElementById('map-loading').style.display = 'none';
+            if (loading) {
+                loading.style.display = 'none';
+            }
 
             locations.forEach(function(location) {
-                new mapboxgl.Marker({color: '#8F8A89'})
+                new maplibregl.Marker({color: '#8F8A89'})
                     .setLngLat([location.lng, location.lat])
-                    .setPopup(new mapboxgl.Popup({ offset: 25 })
+                    .setPopup(new maplibregl.Popup({ offset: 25 })
                         .setHTML('<h3>' + location.name + '</h3>'))
                     .addTo(map);
             });
         });
+
+        map.on('error', function() {
+            if (loading) {
+                loading.textContent = 'Map failed to load.';
+            }
+        });
     }
 
-    // Lazy-load Mapbox CSS and JS
-    function loadMapbox() {
+    // Lazy-load MapLibre CSS and JS
+    function loadMapLibrary() {
         // Load CSS
         var css = document.createElement('link');
         css.rel = 'stylesheet';
-        css.href = 'https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css';
+        css.href = 'https://unpkg.com/maplibre-gl@3.5.1/dist/maplibre-gl.css';
         document.head.appendChild(css);
 
         // Load JS
         var script = document.createElement('script');
-        script.src = 'https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js';
+        script.src = 'https://unpkg.com/maplibre-gl@3.5.1/dist/maplibre-gl.js';
         script.onload = initMap;
+        script.onerror = function() {
+            var loading = document.getElementById('map-loading');
+            if (loading) {
+                loading.textContent = 'Map failed to load.';
+            }
+        };
         document.head.appendChild(script);
     }
 
     // Load map when page becomes visible or on DOMContentLoaded
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadMapbox);
+        document.addEventListener('DOMContentLoaded', loadMapLibrary);
     } else {
-        loadMapbox();
+        loadMapLibrary();
     }
 </script>
 
