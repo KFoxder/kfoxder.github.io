@@ -3,6 +3,7 @@
 # Requires: sips (macOS built-in), optionally cwebp for WebP conversion
 
 set -e
+shopt -s nullglob
 
 ASSETS_DIR="$(dirname "$0")/../assets"
 MAX_WIDTH=1600
@@ -11,7 +12,7 @@ JPEG_QUALITY=70
 echo "Optimizing images in $ASSETS_DIR..."
 
 # Optimize JPEG files
-for file in "$ASSETS_DIR"/*.{jpeg,jpg} 2>/dev/null; do
+for file in "$ASSETS_DIR"/*.jpeg "$ASSETS_DIR"/*.jpg; do
     if [ -f "$file" ]; then
         filename=$(basename "$file")
         echo "Processing: $filename"
@@ -29,7 +30,7 @@ for file in "$ASSETS_DIR"/*.{jpeg,jpg} 2>/dev/null; do
 done
 
 # Optimize PNG files
-for file in "$ASSETS_DIR"/*.png 2>/dev/null; do
+for file in "$ASSETS_DIR"/*.png; do
     if [ -f "$file" ]; then
         filename=$(basename "$file")
         echo "Processing: $filename"
@@ -50,7 +51,7 @@ done
 if command -v cwebp &> /dev/null; then
     echo ""
     echo "Converting to WebP format..."
-    for file in "$ASSETS_DIR"/*.{jpeg,jpg,png} 2>/dev/null; do
+    for file in "$ASSETS_DIR"/*.jpeg "$ASSETS_DIR"/*.jpg "$ASSETS_DIR"/*.png; do
         if [ -f "$file" ]; then
             webp_file="${file%.*}.webp"
             if [ ! -f "$webp_file" ]; then
